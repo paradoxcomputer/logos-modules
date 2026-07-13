@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "name": "paradox-modules",
+  "displayName": "Paradox Computer",
+  "description": "Paradox Computer apps for Logos Basecamp.",
+  "homepage": "https://medusa.paradox.computer",
+  "indexUrl": "https://paradoxcomputer.github.io/logos-modules/index.json",
+  "trustedSigners": []
+}
