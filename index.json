@@ -1,40 +1,38 @@
 {
   "schemaVersion": 2,
   "repositoryName": "paradox-modules",
-  "generatedAt": "2026-07-13T23:34:40Z",
+  "generatedAt": "2026-07-28T08:56:53Z",
   "packages": [
     {
       "name": "medusa_core",
       "versions": [
         {
-          "releasedAt": "2026-07-13T23:34:40Z",
-          "publisherRef": "medusa_core-v0.2.0",
-          "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_core-0.2.0.lgx",
-          "size": 66680686,
-          "sha256": "a4c2960a5fc406f3e90132ef1c9fe2ee41a4ec6af1d6c44e2e88b4736233b0cd",
-          "rootHash": "c0462c77923a5362059913a44ecc58c6274dcd394b97e2869a94efc4e7676340",
+          "releasedAt": "2026-07-28T08:56:53Z",
+          "publisherRef": "medusa_core-v0.2.4",
+          "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_core-0.2.4.lgx",
+          "size": 66435177,
+          "sha256": "da9907ca28029398ad200096774ac4b3a57027da2ab35c6fe5f172a0f5a3cf56",
+          "rootHash": "505ee0e51f87189ea0eaefaa8637091524ac168de588cb8e7778aabbccde2b61",
           "manifest": {
             "author": "",
             "category": "blockchain",
             "dependencies": [],
             "description": "Native token wallet: accounts, faucet, keycard-gated transfers",
             "hashes": {
-              "root": "c0462c77923a5362059913a44ecc58c6274dcd394b97e2869a94efc4e7676340",
-              "variants": "20650b99692fbf5cec95d83008cc79cb94715c5c2e9fd8e69e4cb033f85d2ebb",
-              "variants/darwin-arm64": "738eb0b46011bbeb9b08acbb7d6a40d9fc4d0d54c51efcdf48e74924c2856e9a",
-              "variants/linux-amd64": "0d0c010a8d54d219ed1d2ff9f32dd1dfa02852bdc431372b6eeb517cfc6d3840",
-              "variants/linux-amd64-dev": "2b245ec6840b004d75f3217d9eca0d6e52ac2f2a2a241d5d270484b18d77fb76"
+              "root": "505ee0e51f87189ea0eaefaa8637091524ac168de588cb8e7778aabbccde2b61",
+              "variants": "96ed3ef68cac535becb6b073eeb4c9cbb325fb158ba8194e10c30ed28ded6382",
+              "variants/darwin-arm64": "4e1dabefabbe27890d6f103f56420114edb4d1c5962abfb0195ccd25df15c6ae",
+              "variants/linux-amd64": "b03cde1a9d2d447b7f12d13234201eccc7bc37a933eedc6f3e1fd7c2aba71d29"
             },
             "icon": "",
             "main": {
               "darwin-arm64": "medusa_core_plugin.dylib",
-              "linux-amd64": "medusa_core_plugin.so",
-              "linux-amd64-dev": "medusa_core_plugin.so"
+              "linux-amd64": "medusa_core_plugin.so"
             },
             "manifestVersion": "0.3.0",
             "name": "medusa_core",
             "type": "core",
-            "version": "0.2.0"
+            "version": "0.2.4"
           }
         }
       ]
@@ -43,12 +41,12 @@
       "name": "medusa_ui",
       "versions": [
         {
-          "releasedAt": "2026-07-13T23:34:40Z",
-          "publisherRef": "medusa_ui-v0.2.3",
-          "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_ui-0.2.3.lgx",
-          "size": 7156941,
-          "sha256": "0b81732b67ae05f5d4fcb0028367bf27707b4269678084c3abc991aeec05d089",
-          "rootHash": "071d4d271d84cee8f10bcfb0d90ce12b2929291c2e4837ef8b0f8df32ad062cd",
+          "releasedAt": "2026-07-28T08:56:53Z",
+          "publisherRef": "medusa_ui-v0.2.4",
+          "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_ui-0.2.4.lgx",
+          "size": 4771941,
+          "sha256": "87ff54e55a92dcec279484c56ad99837a9c29489619e1cc04a8216e4bdb23e90",
+          "rootHash": "4016a8b8a52d15a820d805d615189b0134af53162293f42788153641e98d11e4",
           "manifest": {
             "author": "",
             "category": "blockchain",
@@ -57,18 +55,17 @@
             ],
             "description": "Native token wallet UI: accounts, faucet, keycard-gated transfers",
             "hashes": {
-              "root": "071d4d271d84cee8f10bcfb0d90ce12b2929291c2e4837ef8b0f8df32ad062cd",
-              "variants": "139955f82d18612e9b11f026ad8aebd9d524ff9b09831e3dd7c595aa2d3f54a5",
-              "variants/darwin-arm64": "943b43d089defac213f5a9623d89a85721162b0819563bdcb4a0137b19ea538f",
-              "variants/linux-amd64": "6299c21ef0c2547e02273d37470fa7ae3e770300206fb3add8479fa7049df3e1",
-              "variants/linux-amd64-dev": "6299c21ef0c2547e02273d37470fa7ae3e770300206fb3add8479fa7049df3e1"
+              "root": "4016a8b8a52d15a820d805d615189b0134af53162293f42788153641e98d11e4",
+              "variants": "37053e2cc2c240980600a8371e5b5795dd1277cd1d1a9a554e0a72e7f146e71e",
+              "variants/darwin-arm64": "9ed098f7c2be40234e15dbe659e67f1a94e5c095cf51c4cf3d7dcc23b72e477c",
+              "variants/linux-amd64": "9ed098f7c2be40234e15dbe659e67f1a94e5c095cf51c4cf3d7dcc23b72e477c"
             },
             "icon": "medusa-icon.png",
             "main": {},
             "manifestVersion": "0.2.0",
             "name": "medusa_ui",
             "type": "ui_qml",
-            "version": "0.2.3",
+            "version": "0.2.4",
             "view": "qml/Main.qml"
           }
         }
@@ -78,12 +75,12 @@
       "name": "tip_jar",
       "versions": [
         {
-          "releasedAt": "2026-07-13T23:34:40Z",
+          "releasedAt": "2026-07-28T08:56:53Z",
           "publisherRef": "tip_jar-v0.2.0",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/tip_jar-0.2.0.lgx",
-          "size": 123033,
-          "sha256": "77c1da9958c2919cddce602e5aaef8e11dbcf820bc30487dfb3818e342cae2b9",
-          "rootHash": "5bd064ad5d51e9b89f0b66230e468a37aa9ba9a14b99815a5a8dbd05e8bb6241",
+          "size": 89852,
+          "sha256": "2dc0de594f1029c74aec897505489f885d1e2f54ae9271ea3bc45b2c7739ac39",
+          "rootHash": "f882fb67d4576efabbaf9c0fafa5c9b83de0683f85126e7de5012519c42fef37",
           "manifest": {
             "author": "",
             "category": "blockchain",
@@ -92,11 +89,10 @@
             ],
             "description": "Tip Jar: a Connect-with-Medusa SDK demo (connect + tip)",
             "hashes": {
-              "root": "5bd064ad5d51e9b89f0b66230e468a37aa9ba9a14b99815a5a8dbd05e8bb6241",
-              "variants": "6f1a7e8fe7f506aa1547c28a6e8646b963db67bfd0990a9e8396865c628e9b1d",
+              "root": "f882fb67d4576efabbaf9c0fafa5c9b83de0683f85126e7de5012519c42fef37",
+              "variants": "5aff5011817ca5dd042fd367a6622b354ae75ff2af784454e927de4476a3e18c",
               "variants/darwin-arm64": "f869d777a1f7f425e1016a97f355f514605f630e2a1c550d212b8f7a5a85f165",
-              "variants/linux-amd64": "79e5fb0b5b4596452ab20ba223ae21970846ecd30f7b687e336cd97a686d1796",
-              "variants/linux-amd64-dev": "79e5fb0b5b4596452ab20ba223ae21970846ecd30f7b687e336cd97a686d1796"
+              "variants/linux-amd64": "f869d777a1f7f425e1016a97f355f514605f630e2a1c550d212b8f7a5a85f165"
             },
             "icon": "medusa-logo.png",
             "main": {},
