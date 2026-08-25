@@ -49,13 +49,31 @@ second full copy of the payload:
   url, size, sha256 and manifest. Git LFS is not an option: Pages serves the LFS pointer rather
   than the file. The sidecar holds everything `index.json` needs, so the index still
   regenerates on a clean checkout with no large file present.
-- Basecamp's downloader has a hard **600-second** total timeout
-  (`CURLOPT_TIMEOUT` in `package_downloader_lib.cpp`), with no resume. At a measured ~240 kB/s
-  that is about **140 MB**, whatever the hosting.
+- Basecamp gives up on a download after **300 seconds**. Not the 600 s `CURLOPT_TIMEOUT` in
+  `package_downloader_lib.cpp` — the binding limit is `kDownloadIpcDeadlineMs = 5 * 60 * 1000`
+  in Basecamp's `PackageCoordinator.cpp`, which wraps the whole batch, so curl's own cap never
+  fires. There is no resume and no retry: a failed attempt deletes the partial file and the
+  next one restarts at byte 0. At a measured ~200-240 kB/s that budget is roughly **60-70 MB
+  for the entire batch**.
 
-`medusa_core` is why this is written down. It is 84 MB with one spelling and 167 MB with both;
-the second form takes ~720 s to fetch and so cannot be installed at all on an ordinary
-connection. It therefore ships with the plain names only, and is not installable from a
-source build of Basecamp until its payload is smaller. Stripping its binaries recovers only
-15–24 % — they are already close to stripped — so the saving has to come from the four Rust
-binaries under `bin/` that make up 112 MB of the 128 MB variant.
+The batch matters because dependencies are not short-circuited. `PackageCoordinator` promotes
+every dependency to a top-level entry and passes an empty installed-packages list
+(`downloadResolvedDependenciesAsync(depsJson, QString(), ...)`), so a dependency is downloaded
+in full even when that exact version is already installed, and discarded afterwards. Installing
+the 0.2 MB `tip_jar` therefore transfers `medusa_core` as well.
+
+`medusa_core` is why this is written down. It is 84 MB with one set of variant names and 167 MB
+with both. A measured fetch of the 84 MB build took **373 s** — already past the 300 s deadline
+on an ordinary connection, before any `-dev` twins are added. It therefore ships with the plain
+names only; doubling it would not have made it installable, only slower. Nothing that depends
+on it (`medusa_ui`, `tip_jar`) can be installed from this catalog on such a link either, and
+the failure is silent: when the deadline fires the transport hands back an empty result, which
+`PackageCoordinator` cannot tell apart from "nothing to install", so the dialog reports success
+and offers Launch while nothing was installed.
+
+The fix is to make `medusa_core` smaller — four Rust binaries under `bin/` are 112 MB of the
+128 MB variant. Stripping recovers only 15-24 %; they are already close to stripped.
+
+`zonescan_lite` has no dependencies and is 15 MB, ~180 s on the same link, so it installs
+comfortably. Note that carrying both variant spellings doubled it from 7.6 MB and so halved its
+margin against the 300 s deadline; keep an eye on that if the app grows.
