@@ -1,13 +1,13 @@
 {
   "schemaVersion": 2,
   "repositoryName": "paradox-modules",
-  "generatedAt": "2026-08-11T04:04:16Z",
+  "generatedAt": "2026-08-25T20:13:24Z",
   "packages": [
     {
       "name": "medusa_core",
       "versions": [
         {
-          "releasedAt": "2026-08-11T04:04:16Z",
+          "releasedAt": "2026-08-25T20:13:24Z",
           "publisherRef": "medusa_core-v0.4.0",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_core-0.4.0.lgx",
           "size": 87752407,
@@ -41,7 +41,7 @@
       "name": "medusa_ui",
       "versions": [
         {
-          "releasedAt": "2026-08-11T04:04:16Z",
+          "releasedAt": "2026-08-25T20:13:24Z",
           "publisherRef": "medusa_ui-v0.4.0",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_ui-0.4.0.lgx",
           "size": 4869529,
@@ -75,7 +75,7 @@
       "name": "tip_jar",
       "versions": [
         {
-          "releasedAt": "2026-08-11T04:04:16Z",
+          "releasedAt": "2026-08-25T20:13:24Z",
           "publisherRef": "tip_jar-v0.2.1",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/tip_jar-0.2.1.lgx",
           "size": 104012,
@@ -101,6 +101,42 @@
             "type": "ui_qml",
             "version": "0.2.1",
             "view": "qml/Main.qml"
+          }
+        }
+      ]
+    },
+    {
+      "name": "zonescan_lite",
+      "versions": [
+        {
+          "releasedAt": "2026-08-25T20:13:24Z",
+          "publisherRef": "zonescan_lite-v0.3.0",
+          "url": "https://paradoxcomputer.github.io/logos-modules/lgx/zonescan_lite-0.3.0.lgx",
+          "size": 7598742,
+          "sha256": "bd06ea43706f7f22761a18cc88727b3ab043db9856c0402208494790ef181fac",
+          "rootHash": "27510a54125a558ee5b7542b95891c2b7c8a2b3780e34b1d0801ecbdc5163cb0",
+          "manifest": {
+            "author": "paradox.computer",
+            "category": "explorer",
+            "dependencies": [],
+            "description": "ZoneScan Lite: a Logos Execution Zone block explorer",
+            "hashes": {
+              "root": "27510a54125a558ee5b7542b95891c2b7c8a2b3780e34b1d0801ecbdc5163cb0",
+              "variants": "d8b423a0178ba533bf04f39fe5cc53bbbe8598ad6b80960b8acb916571dd7882",
+              "variants/darwin-arm64": "df3404435ef3918e683ab8ecf4182bdfca8ff43bb4e512c0659600eb74196675",
+              "variants/linux-amd64": "af1bd93532f38d5b7ded2332a8bafee3dd4fd8138699fa2307fcde80952d3603"
+            },
+            "icon": "icon.png",
+            "main": {
+              "darwin-arm64": "zonescan_lite_plugin.dylib",
+              "linux-amd64": "zonescan_lite_plugin.so"
+            },
+            "manifestVersion": "0.3.0",
+            "name": "zonescan_lite",
+            "type": "ui_qml",
+            "version": "0.3.0",
+            "view": "qml/Main.qml",
+            "display_name": "ZoneScan Lite"
           }
         }
       ]
