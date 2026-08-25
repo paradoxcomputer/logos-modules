@@ -1,13 +1,13 @@
 {
   "schemaVersion": 2,
   "repositoryName": "paradox-modules",
-  "generatedAt": "2026-08-25T20:13:24Z",
+  "generatedAt": "2026-08-25T21:20:43Z",
   "packages": [
     {
       "name": "medusa_core",
       "versions": [
         {
-          "releasedAt": "2026-08-25T20:13:24Z",
+          "releasedAt": "2026-08-25T21:20:43Z",
           "publisherRef": "medusa_core-v0.4.0",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_core-0.4.0.lgx",
           "size": 87752407,
@@ -41,12 +41,12 @@
       "name": "medusa_ui",
       "versions": [
         {
-          "releasedAt": "2026-08-25T20:13:24Z",
+          "releasedAt": "2026-08-25T21:20:43Z",
           "publisherRef": "medusa_ui-v0.4.0",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_ui-0.4.0.lgx",
-          "size": 4869529,
-          "sha256": "ddd4fba6561ac00eb30151119dfd55224cb6f0f2f90fe0dd0e7862b9f8d3ed5e",
-          "rootHash": "8db52fc671df86bc0f2407504a478a045172df78a6cdb9f812729e1739f68295",
+          "size": 9736220,
+          "sha256": "e302046b25b1c96b35a940d0293aa397500dcd04c1197f1ede7cd23b183ff261",
+          "rootHash": "83b91948fd96c470ded79643c35bab75579a2af08e25f3b73bdcae147318d248",
           "manifest": {
             "author": "",
             "category": "blockchain",
@@ -55,10 +55,12 @@
             ],
             "description": "Native token wallet UI: accounts, faucet, keycard-gated transfers",
             "hashes": {
-              "root": "8db52fc671df86bc0f2407504a478a045172df78a6cdb9f812729e1739f68295",
-              "variants": "e428896ac062e3e4bffd3ab1775f9eb8b45d98fd6c4feef5ff2b2b3b7409a820",
+              "root": "83b91948fd96c470ded79643c35bab75579a2af08e25f3b73bdcae147318d248",
+              "variants": "2f622abf48853bf3a2cedac313926c0ef5dbb1a8032b837d6a3b8d0d9c092a38",
               "variants/darwin-arm64": "18ba5fba8134a94ecd9215b5ab7f314d6173cb7d37614f51f4c04c2613750b4d",
-              "variants/linux-amd64": "18ba5fba8134a94ecd9215b5ab7f314d6173cb7d37614f51f4c04c2613750b4d"
+              "variants/darwin-arm64-dev": "18ba5fba8134a94ecd9215b5ab7f314d6173cb7d37614f51f4c04c2613750b4d",
+              "variants/linux-amd64": "18ba5fba8134a94ecd9215b5ab7f314d6173cb7d37614f51f4c04c2613750b4d",
+              "variants/linux-amd64-dev": "18ba5fba8134a94ecd9215b5ab7f314d6173cb7d37614f51f4c04c2613750b4d"
             },
             "icon": "medusa-icon.png",
             "main": {},
@@ -75,12 +77,12 @@
       "name": "tip_jar",
       "versions": [
         {
-          "releasedAt": "2026-08-25T20:13:24Z",
+          "releasedAt": "2026-08-25T21:20:43Z",
           "publisherRef": "tip_jar-v0.2.1",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/tip_jar-0.2.1.lgx",
-          "size": 104012,
-          "sha256": "5eece86a7fcb4b428bc4a5126933a15ccaf3e9b98b5c318ae0c2c6110525413b",
-          "rootHash": "a87e866b57db9ad171d3811c7f90d1c43952b89c26ebd31564f0feb0718968a9",
+          "size": 183761,
+          "sha256": "17b0bf75609d0a650a84071bee6ec3833cdcac1ec58fbc73a62bf2e1821f7ba0",
+          "rootHash": "b5cc44b79db7fcf343e548d294bda748b974dc9ad4b7b3178fd03568d5ffbc5b",
           "manifest": {
             "author": "",
             "category": "blockchain",
@@ -89,10 +91,12 @@
             ],
             "description": "Tip Jar: a Connect-with-Medusa SDK demo (connect + tip)",
             "hashes": {
-              "root": "a87e866b57db9ad171d3811c7f90d1c43952b89c26ebd31564f0feb0718968a9",
-              "variants": "50eaae0dfd5777ae1a0e9126d5bc9f631b027f235c79014f14738ae1cc97e1d4",
+              "root": "b5cc44b79db7fcf343e548d294bda748b974dc9ad4b7b3178fd03568d5ffbc5b",
+              "variants": "b75c21be32818f40dbe075876deec9d18540075ef367ea993e1cfaf4d276487a",
               "variants/darwin-arm64": "ed8f9542ffe4a498975e4b2cbfe98e9b33d498c76acd6f8e491b950763bf1089",
-              "variants/linux-amd64": "ed8f9542ffe4a498975e4b2cbfe98e9b33d498c76acd6f8e491b950763bf1089"
+              "variants/darwin-arm64-dev": "ed8f9542ffe4a498975e4b2cbfe98e9b33d498c76acd6f8e491b950763bf1089",
+              "variants/linux-amd64": "ed8f9542ffe4a498975e4b2cbfe98e9b33d498c76acd6f8e491b950763bf1089",
+              "variants/linux-amd64-dev": "ed8f9542ffe4a498975e4b2cbfe98e9b33d498c76acd6f8e491b950763bf1089"
             },
             "icon": "medusa-logo.png",
             "main": {},
@@ -109,34 +113,38 @@
       "name": "zonescan_lite",
       "versions": [
         {
-          "releasedAt": "2026-08-25T20:13:24Z",
-          "publisherRef": "zonescan_lite-v0.3.0",
-          "url": "https://paradoxcomputer.github.io/logos-modules/lgx/zonescan_lite-0.3.0.lgx",
-          "size": 7598742,
-          "sha256": "bd06ea43706f7f22761a18cc88727b3ab043db9856c0402208494790ef181fac",
-          "rootHash": "27510a54125a558ee5b7542b95891c2b7c8a2b3780e34b1d0801ecbdc5163cb0",
+          "releasedAt": "2026-08-25T21:20:43Z",
+          "publisherRef": "zonescan_lite-v0.3.1",
+          "url": "https://paradoxcomputer.github.io/logos-modules/lgx/zonescan_lite-0.3.1.lgx",
+          "size": 15257069,
+          "sha256": "fc58012ce0f4c08dfdd7c8e463afbfdbbeab46a2e7a1550b20fadce3908c2847",
+          "rootHash": "9de37eaa1fa60b0812dc6e875a857f6ea06cef297b3e02c13a3ab77fe7358708",
           "manifest": {
             "author": "paradox.computer",
             "category": "explorer",
             "dependencies": [],
             "description": "ZoneScan Lite: a Logos Execution Zone block explorer",
+            "display_name": "ZoneScan Lite",
             "hashes": {
-              "root": "27510a54125a558ee5b7542b95891c2b7c8a2b3780e34b1d0801ecbdc5163cb0",
-              "variants": "d8b423a0178ba533bf04f39fe5cc53bbbe8598ad6b80960b8acb916571dd7882",
-              "variants/darwin-arm64": "df3404435ef3918e683ab8ecf4182bdfca8ff43bb4e512c0659600eb74196675",
-              "variants/linux-amd64": "af1bd93532f38d5b7ded2332a8bafee3dd4fd8138699fa2307fcde80952d3603"
+              "root": "9de37eaa1fa60b0812dc6e875a857f6ea06cef297b3e02c13a3ab77fe7358708",
+              "variants": "7e7a27b4fd89c24b86ac863e5aebf50025998352ffa5dfa3defdafcda4a24a0f",
+              "variants/darwin-arm64": "8525bde355a8df566a6ad1431cbde4c9e2cda4bdb8ae10805d20256a7e155a82",
+              "variants/darwin-arm64-dev": "8525bde355a8df566a6ad1431cbde4c9e2cda4bdb8ae10805d20256a7e155a82",
+              "variants/linux-amd64": "cf8b765beee295d9df845af1bb24d34a0cd60a6f013454e21849fc2848238130",
+              "variants/linux-amd64-dev": "cf8b765beee295d9df845af1bb24d34a0cd60a6f013454e21849fc2848238130"
             },
             "icon": "icon.png",
             "main": {
               "darwin-arm64": "zonescan_lite_plugin.dylib",
-              "linux-amd64": "zonescan_lite_plugin.so"
+              "darwin-arm64-dev": "zonescan_lite_plugin.dylib",
+              "linux-amd64": "zonescan_lite_plugin.so",
+              "linux-amd64-dev": "zonescan_lite_plugin.so"
             },
             "manifestVersion": "0.3.0",
             "name": "zonescan_lite",
             "type": "ui_qml",
-            "version": "0.3.0",
-            "view": "qml/Main.qml",
-            "display_name": "ZoneScan Lite"
+            "version": "0.3.1",
+            "view": "qml/Main.qml"
           }
         }
       ]
