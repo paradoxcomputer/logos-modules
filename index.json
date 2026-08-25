@@ -1,33 +1,37 @@
 {
   "schemaVersion": 2,
   "repositoryName": "paradox-modules",
-  "generatedAt": "2026-08-25T21:20:43Z",
+  "generatedAt": "2026-08-25T21:46:10Z",
   "packages": [
     {
       "name": "medusa_core",
       "versions": [
         {
-          "releasedAt": "2026-08-25T21:20:43Z",
+          "releasedAt": "2026-08-25T21:46:10Z",
           "publisherRef": "medusa_core-v0.4.0",
-          "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_core-0.4.0.lgx",
-          "size": 87752407,
-          "sha256": "19655f922ab0118d858630c3a6447e5a7c66bcef85a1b83177d1c69168997e96",
-          "rootHash": "3d0a5e3ad19fed599ddd78f8610781d4179fba46a03b1c011848f5d6ea93c772",
+          "url": "https://github.com/paradoxcomputer/logos-modules/releases/download/packages/medusa_core-0.4.0.lgx",
+          "size": 175490958,
+          "sha256": "935019232b0f5ba4fea61df250cece8898a5c0b340cf875340170cdf72b6afd3",
+          "rootHash": "dc57bb165611d0435a6887eaa5d17b1b864ecda04a41efcdfefe9d59ff89f512",
           "manifest": {
             "author": "",
             "category": "blockchain",
             "dependencies": [],
             "description": "Native token wallet: accounts, faucet, keycard-gated transfers",
             "hashes": {
-              "root": "3d0a5e3ad19fed599ddd78f8610781d4179fba46a03b1c011848f5d6ea93c772",
-              "variants": "4226340162b6fbe0909b9a97b7f3040b7abd86ea9b536dd2145635976cfed2d3",
+              "root": "dc57bb165611d0435a6887eaa5d17b1b864ecda04a41efcdfefe9d59ff89f512",
+              "variants": "7f532282b1fa4b0cb9efcbd2b94f874535f3714d8fe3c54b6adad791ec39d099",
               "variants/darwin-arm64": "c570fe99fe2b8ca09491b870e191ae1e11271611092eccb6f1b92b133388f5aa",
-              "variants/linux-amd64": "4e9af6fff170b329fe778bcc8739cd7fb1154cf050cd38881094b1f351659a2f"
+              "variants/darwin-arm64-dev": "c570fe99fe2b8ca09491b870e191ae1e11271611092eccb6f1b92b133388f5aa",
+              "variants/linux-amd64": "4e9af6fff170b329fe778bcc8739cd7fb1154cf050cd38881094b1f351659a2f",
+              "variants/linux-amd64-dev": "4e9af6fff170b329fe778bcc8739cd7fb1154cf050cd38881094b1f351659a2f"
             },
             "icon": "",
             "main": {
               "darwin-arm64": "medusa_core_plugin.dylib",
-              "linux-amd64": "medusa_core_plugin.so"
+              "darwin-arm64-dev": "medusa_core_plugin.dylib",
+              "linux-amd64": "medusa_core_plugin.so",
+              "linux-amd64-dev": "medusa_core_plugin.so"
             },
             "manifestVersion": "0.3.0",
             "name": "medusa_core",
@@ -41,7 +45,7 @@
       "name": "medusa_ui",
       "versions": [
         {
-          "releasedAt": "2026-08-25T21:20:43Z",
+          "releasedAt": "2026-08-25T21:46:10Z",
           "publisherRef": "medusa_ui-v0.4.0",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_ui-0.4.0.lgx",
           "size": 9736220,
@@ -77,7 +81,7 @@
       "name": "tip_jar",
       "versions": [
         {
-          "releasedAt": "2026-08-25T21:20:43Z",
+          "releasedAt": "2026-08-25T21:46:10Z",
           "publisherRef": "tip_jar-v0.2.1",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/tip_jar-0.2.1.lgx",
           "size": 183761,
@@ -113,7 +117,7 @@
       "name": "zonescan_lite",
       "versions": [
         {
-          "releasedAt": "2026-08-25T21:20:43Z",
+          "releasedAt": "2026-08-25T21:46:10Z",
           "publisherRef": "zonescan_lite-v0.3.1",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/zonescan_lite-0.3.1.lgx",
           "size": 15257069,

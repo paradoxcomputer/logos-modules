@@ -6,6 +6,13 @@ schemaVersion-2 format Basecamp's package_downloader expects: download url, file
 sha256, rootHash (== manifest.hashes.root), and the embedded manifest (which
 carries display_name, per-variant hashes, dependencies, view, etc.).
 
+Packages too large to live in the repository are described by a JSON file in
+../external/ instead (see EXTERNAL_DIR below). GitHub refuses any file over
+100 MB, and Pages cannot serve a Git-LFS pointer as its payload, so a package
+that exceeds the limit is uploaded to a GitHub release and named here by its
+absolute url. Everything the index needs is captured in the sidecar, so the
+index still regenerates on a clean checkout with no large blob present.
+
 Usage:
   gen-index.py --base-url https://packages.paradox.computer/lgx [--repo-name paradox-modules] > index.json
 
@@ -25,6 +32,7 @@ import tarfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 LGX_DIR = os.path.join(HERE, "..", "lgx")
+EXTERNAL_DIR = os.path.join(HERE, "..", "external")
 
 
 def read_manifest(path):
@@ -48,6 +56,27 @@ def main():
         datetime.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
     packages = []
+
+    # Externally-hosted packages first; each sidecar carries the absolute url, the
+    # size/sha256 of the asset and the manifest lifted from it at upload time.
+    for fn in sorted(os.listdir(EXTERNAL_DIR)) if os.path.isdir(EXTERNAL_DIR) else []:
+        if not fn.endswith(".json"):
+            continue
+        ext = json.load(open(os.path.join(EXTERNAL_DIR, fn)))
+        manifest = ext["manifest"]
+        packages.append({
+            "name": manifest["name"],
+            "versions": [{
+                "releasedAt": gen_at,
+                "publisherRef": "%s-v%s" % (manifest["name"], manifest.get("version", "0")),
+                "url": ext["url"],
+                "size": ext["size"],
+                "sha256": ext["sha256"],
+                "rootHash": manifest.get("hashes", {}).get("root", ""),
+                "manifest": manifest,
+            }],
+        })
+
     for fn in sorted(os.listdir(LGX_DIR)):
         if not fn.endswith(".lgx"):
             continue
@@ -66,6 +95,12 @@ def main():
                 "manifest": manifest,
             }],
         })
+
+    names = [p["name"] for p in packages]
+    dupes = sorted({n for n in names if names.count(n) > 1})
+    if dupes:
+        sys.exit("error: %s described both in lgx/ and external/" % ", ".join(dupes))
+    packages.sort(key=lambda p: p["name"])
 
     index = {
         "schemaVersion": 2,
