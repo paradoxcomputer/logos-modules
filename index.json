@@ -1,13 +1,13 @@
 {
   "schemaVersion": 2,
   "repositoryName": "paradox-modules",
-  "generatedAt": "2026-08-26T02:54:20Z",
+  "generatedAt": "2026-08-26T02:57:12Z",
   "packages": [
     {
       "name": "medusa_core",
       "versions": [
         {
-          "releasedAt": "2026-08-26T02:54:20Z",
+          "releasedAt": "2026-08-26T02:57:12Z",
           "publisherRef": "medusa_core-v0.4.2",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_core-0.4.2.lgx",
           "size": 70393936,
@@ -46,7 +46,39 @@
       "name": "medusa_ui",
       "versions": [
         {
-          "releasedAt": "2026-08-26T02:54:20Z",
+          "releasedAt": "2026-08-26T02:57:12Z",
+          "publisherRef": "medusa_ui-v0.4.1",
+          "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_ui-0.4.1.lgx",
+          "size": 9755683,
+          "sha256": "a1b77e3c126b6590264c653d53407a32627525c991d068af9c88f126dd42f848",
+          "rootHash": "316ba542352d3b37ecc129a7a8f6b85c92bad71530b478d281fdae198c768840",
+          "manifest": {
+            "author": "",
+            "category": "blockchain",
+            "dependencies": [
+              "medusa_core"
+            ],
+            "description": "Native token wallet UI: accounts, faucet, keycard-gated transfers",
+            "hashes": {
+              "root": "316ba542352d3b37ecc129a7a8f6b85c92bad71530b478d281fdae198c768840",
+              "variants": "7eeae0944384e3564361a485ef41028fae8327a7057b4f8235a0416284bb0407",
+              "variants/darwin-arm64": "f54d171bf058716f4865cdee7ff94d141c453d311d8ed7ea5e4dd2a37f0cb2f4",
+              "variants/darwin-arm64-dev": "f54d171bf058716f4865cdee7ff94d141c453d311d8ed7ea5e4dd2a37f0cb2f4",
+              "variants/linux-amd64": "f54d171bf058716f4865cdee7ff94d141c453d311d8ed7ea5e4dd2a37f0cb2f4",
+              "variants/linux-amd64-dev": "f54d171bf058716f4865cdee7ff94d141c453d311d8ed7ea5e4dd2a37f0cb2f4"
+            },
+            "icon": "medusa-icon.png",
+            "main": {},
+            "manifestVersion": "0.2.0",
+            "name": "medusa_ui",
+            "type": "ui_qml",
+            "version": "0.4.1",
+            "view": "qml/Main.qml",
+            "display_name": "Medusa"
+          }
+        },
+        {
+          "releasedAt": "2026-08-26T02:57:12Z",
           "publisherRef": "medusa_ui-v0.4.0",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_ui-0.4.0.lgx",
           "size": 9736220,
@@ -82,7 +114,7 @@
       "name": "tip_jar",
       "versions": [
         {
-          "releasedAt": "2026-08-26T02:54:20Z",
+          "releasedAt": "2026-08-26T02:57:12Z",
           "publisherRef": "tip_jar-v0.2.1",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/tip_jar-0.2.1.lgx",
           "size": 183761,
@@ -118,7 +150,7 @@
       "name": "zonescan_lite",
       "versions": [
         {
-          "releasedAt": "2026-08-26T02:54:20Z",
+          "releasedAt": "2026-08-26T02:57:12Z",
           "publisherRef": "zonescan_lite-v0.3.1",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/zonescan_lite-0.3.1.lgx",
           "size": 15257069,
