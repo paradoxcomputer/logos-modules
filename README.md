@@ -16,6 +16,23 @@ Then open the Package Manager and install:
 
 Basecamp picks the build for your platform automatically.
 
+### Medusa needs the per-architecture files
+
+Install **ZoneScan Lite** from the Package Manager as above. **Medusa** and **Tip Jar** cannot
+be installed that way on an ordinary connection: Basecamp abandons a download after 300 seconds
+and always fetches every architecture, and `medusa_core` is too large to arrive in time. Worse,
+when that deadline fires the install is reported as having *succeeded*.
+
+Download the file for your machine instead, then use **Install LGX Package** in the Package
+Manager. Installing from disk does no downloading, so no deadline applies.
+
+| Machine | Files, in this order |
+|---|---|
+| Linux x86_64 | [medusa_core](https://github.com/paradoxcomputer/logos-modules/releases/download/packages/medusa_core-0.4.0-linux-amd64.lgx), [medusa_ui](https://github.com/paradoxcomputer/logos-modules/releases/download/packages/medusa_ui-0.4.0-linux-amd64.lgx), [tip_jar](https://github.com/paradoxcomputer/logos-modules/releases/download/packages/tip_jar-0.2.1-linux-amd64.lgx) |
+| macOS Apple silicon | [medusa_core](https://github.com/paradoxcomputer/logos-modules/releases/download/packages/medusa_core-0.4.0-darwin-arm64.lgx), [medusa_ui](https://github.com/paradoxcomputer/logos-modules/releases/download/packages/medusa_ui-0.4.0-darwin-arm64.lgx), [tip_jar](https://github.com/paradoxcomputer/logos-modules/releases/download/packages/tip_jar-0.2.1-darwin-arm64.lgx) |
+
+Install `medusa_core` first — the other two depend on it.
+
 Learn more at https://medusa.paradox.computer
 
 ## Maintaining this repository
@@ -41,8 +58,8 @@ with the same portable payload under both. The release workflows do this after `
 
 ### Size limits
 
-Two ceilings apply, and they pull against carrying both spellings, since a second name means a
-second full copy of the payload:
+Two ceilings apply, and both pull against carrying every variant in one file, since each extra
+variant name means another full copy of the payload:
 
 - GitHub refuses any file over **100 MB** in a repository. A larger payload goes on the
   `packages` release instead of into `lgx/`, described by a sidecar in `external/` carrying the
@@ -62,18 +79,23 @@ every dependency to a top-level entry and passes an empty installed-packages lis
 in full even when that exact version is already installed, and discarded afterwards. Installing
 the 0.2 MB `tip_jar` therefore transfers `medusa_core` as well.
 
-`medusa_core` is why this is written down. It is 84 MB with one set of variant names and 167 MB
-with both. A measured fetch of the 84 MB build took **373 s** — already past the 300 s deadline
-on an ordinary connection, before any `-dev` twins are added. It therefore ships with the plain
-names only; doubling it would not have made it installable, only slower. Nothing that depends
-on it (`medusa_ui`, `tip_jar`) can be installed from this catalog on such a link either, and
-the failure is silent: when the deadline fires the transport hands back an empty result, which
-`PackageCoordinator` cannot tell apart from "nothing to install", so the dialog reports success
-and offers Launch while nothing was installed.
+And a catalog install can never fetch just one architecture: `index.json` holds a single `url`
+per version, and `package_downloader` has no notion of platform at all — the architecture is
+chosen later, by the package manager, from inside the `.lgx`.
 
-The fix is to make `medusa_core` smaller — four Rust binaries under `bin/` are 112 MB of the
-128 MB variant. Stripping recovers only 15-24 %; they are already close to stripped.
+So `medusa_core` cannot be delivered through the catalog on an ordinary connection. A measured
+fetch of the 84 MB build took **373 s**, already past the deadline before any `-dev` twins are
+added; with them it is 167 MB. It stays in `lgx/` under the plain names for fast connections,
+and the per-architecture files on the `packages` release are the supported route — installed
+from disk via **Install LGX Package**, where no download and therefore no deadline is involved.
+Those files carry one architecture under both spellings, so they work on a portable build and a
+build from source alike. `release-linux.yml` in the medusa repo publishes them next to the
+merged package.
 
-`zonescan_lite` has no dependencies and is 15 MB, ~180 s on the same link, so it installs
-comfortably. Note that carrying both variant spellings doubled it from 7.6 MB and so halved its
-margin against the 300 s deadline; keep an eye on that if the app grows.
+Making `medusa_core` small enough for the catalog means shrinking the payload: four Rust
+binaries under `bin/` are 112 MB of the 128 MB variant, and stripping recovers only 15-24 %
+because they are already close to stripped.
+
+`zonescan_lite` has no dependencies and is 15 MB, ~180 s on the same link, so it installs from
+the catalog comfortably. Note that carrying both variant spellings doubled it from 7.6 MB and
+so halved its margin against the 300 s deadline; keep an eye on that if the app grows.
