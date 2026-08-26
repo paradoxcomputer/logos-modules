@@ -55,6 +55,31 @@ def main():
     gen_at = args.generated_at or datetime.datetime.now(
         datetime.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
+    # name -> [version entry, ...]. A package may have SEVERAL .lgx files in lgx/, and they
+    # must land under ONE package entry as multiple versions rather than as duplicate
+    # packages. Old versions are kept and advertised on purpose: Basecamp resolves its
+    # catalog once per process (package_downloader_lib.cpp's metadataResolved latch), so a
+    # session that read the index before a release still asks for the version it saw. Delete
+    # that file and every such session fails with "download failed" on a 404 — which is
+    # exactly what happened to zonescan_lite 0.3.0 and medusa_core 0.4.1.
+    byName = {}
+
+    def addVersion(name, entry):
+        byName.setdefault(name, []).append(entry)
+
+    def versionKey(entry):
+        v = entry.get("manifest", {}).get("version", "0")
+        parts = []
+        for chunk in str(v).split("."):
+            digits = ""
+            for ch in chunk:
+                if ch.isdigit():
+                    digits += ch
+                else:
+                    break
+            parts.append(int(digits) if digits else 0)
+        return parts
+
     packages = []
 
     # Externally-hosted packages first; each sidecar carries the absolute url, the
@@ -64,17 +89,14 @@ def main():
             continue
         ext = json.load(open(os.path.join(EXTERNAL_DIR, fn)))
         manifest = ext["manifest"]
-        packages.append({
-            "name": manifest["name"],
-            "versions": [{
-                "releasedAt": gen_at,
-                "publisherRef": "%s-v%s" % (manifest["name"], manifest.get("version", "0")),
-                "url": ext["url"],
-                "size": ext["size"],
-                "sha256": ext["sha256"],
-                "rootHash": manifest.get("hashes", {}).get("root", ""),
-                "manifest": manifest,
-            }],
+        addVersion(manifest["name"], {
+            "releasedAt": gen_at,
+            "publisherRef": "%s-v%s" % (manifest["name"], manifest.get("version", "0")),
+            "url": ext["url"],
+            "size": ext["size"],
+            "sha256": ext["sha256"],
+            "rootHash": manifest.get("hashes", {}).get("root", ""),
+            "manifest": manifest,
         })
 
     for fn in sorted(os.listdir(LGX_DIR)):
@@ -83,24 +105,27 @@ def main():
         path = os.path.join(LGX_DIR, fn)
         manifest = read_manifest(path)
         data = open(path, "rb").read()
-        packages.append({
-            "name": manifest["name"],
-            "versions": [{
-                "releasedAt": gen_at,
-                "publisherRef": "%s-v%s" % (manifest["name"], manifest.get("version", "0")),
-                "url": "%s/%s" % (base, fn),
-                "size": len(data),
-                "sha256": hashlib.sha256(data).hexdigest(),
-                "rootHash": manifest.get("hashes", {}).get("root", ""),
-                "manifest": manifest,
-            }],
+        addVersion(manifest["name"], {
+            "releasedAt": gen_at,
+            "publisherRef": "%s-v%s" % (manifest["name"], manifest.get("version", "0")),
+            "url": "%s/%s" % (base, fn),
+            "size": len(data),
+            "sha256": hashlib.sha256(data).hexdigest(),
+            "rootHash": manifest.get("hashes", {}).get("root", ""),
+            "manifest": manifest,
         })
 
-    names = [p["name"] for p in packages]
-    dupes = sorted({n for n in names if names.count(n) > 1})
-    if dupes:
-        sys.exit("error: %s described both in lgx/ and external/" % ", ".join(dupes))
-    packages.sort(key=lambda p: p["name"])
+    # Newest version FIRST: consumers treat versions[0] as "latest" (medusa_ui's update check
+    # reads exactly that), so the order is load-bearing, not cosmetic.
+    for name, entries in sorted(byName.items()):
+        entries.sort(key=versionKey, reverse=True)
+        seen = set()
+        for e in entries:
+            v = e.get("manifest", {}).get("version", "0")
+            if v in seen:
+                sys.exit("error: %s has two files claiming version %s" % (name, v))
+            seen.add(v)
+        packages.append({"name": name, "versions": entries})
 
     index = {
         "schemaVersion": 2,

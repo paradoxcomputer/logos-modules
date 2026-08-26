@@ -1,13 +1,13 @@
 {
   "schemaVersion": 2,
   "repositoryName": "paradox-modules",
-  "generatedAt": "2026-08-26T02:40:47Z",
+  "generatedAt": "2026-08-26T02:54:20Z",
   "packages": [
     {
       "name": "medusa_core",
       "versions": [
         {
-          "releasedAt": "2026-08-26T02:40:47Z",
+          "releasedAt": "2026-08-26T02:54:20Z",
           "publisherRef": "medusa_core-v0.4.2",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_core-0.4.2.lgx",
           "size": 70393936,
@@ -46,7 +46,7 @@
       "name": "medusa_ui",
       "versions": [
         {
-          "releasedAt": "2026-08-26T02:40:47Z",
+          "releasedAt": "2026-08-26T02:54:20Z",
           "publisherRef": "medusa_ui-v0.4.0",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_ui-0.4.0.lgx",
           "size": 9736220,
@@ -82,7 +82,7 @@
       "name": "tip_jar",
       "versions": [
         {
-          "releasedAt": "2026-08-26T02:40:47Z",
+          "releasedAt": "2026-08-26T02:54:20Z",
           "publisherRef": "tip_jar-v0.2.1",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/tip_jar-0.2.1.lgx",
           "size": 183761,
@@ -118,7 +118,7 @@
       "name": "zonescan_lite",
       "versions": [
         {
-          "releasedAt": "2026-08-26T02:40:47Z",
+          "releasedAt": "2026-08-26T02:54:20Z",
           "publisherRef": "zonescan_lite-v0.3.1",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/zonescan_lite-0.3.1.lgx",
           "size": 15257069,
