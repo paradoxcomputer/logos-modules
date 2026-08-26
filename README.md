@@ -16,16 +16,13 @@ Then open the Package Manager and install:
 
 Basecamp picks the build for your platform automatically.
 
-### Medusa needs the per-architecture files
+### Medusa on a slow connection
 
-Install **ZoneScan Lite** from the Package Manager as above. **Medusa** and **Tip Jar** cannot
-be installed that way on an ordinary connection: Basecamp abandons a download after 300 seconds
-and always fetches every architecture, and `medusa_core` is too large to arrive in time. Worse,
-when that deadline fires the install is reported as having *succeeded*.
-
-Download the file for your machine instead, then install it from disk:
-**Settings → Modules → Install LGX Package**. That path does no downloading, so no download
-deadline applies — a 90 MB package installs in about two seconds.
+Basecamp abandons a download after 300 seconds and always fetches every architecture, so on a slow
+link a Medusa install can time out — and when it does, it is reported as having *succeeded*. The
+packages are now small enough that a connection of roughly 300 kB/s or better installs them from the
+Package Manager normally. Below that, download the file for your machine and install it from disk via
+**Settings → Modules → Install LGX Package**, which does no downloading at all:
 
 | Machine | Files, in this order |
 |---|---|
@@ -34,7 +31,15 @@ deadline applies — a 90 MB package installs in about two seconds.
 
 Install `medusa_core` first — the other two depend on it.
 
-Learn more at https://medusa.paradox.computer
+### Running a local zone
+
+From `medusa_core` 0.4.1 the package no longer bundles the LEZ sequencer binaries. The wallet's
+default zone is the hosted **Paradox Computer · clearnet** zone and needs no sequencer, so this
+changes nothing for normal use. The local `devnet` and `diaphani` zones now require you to run your
+own sequencer and point the wallet at it.
+
+Dropping them took the package from 167 MB to 67 MB with every variant name included, which is what
+makes a Package Manager install viable at all.
 
 ## Maintaining this repository
 
