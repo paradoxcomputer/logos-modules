@@ -23,8 +23,9 @@ be installed that way on an ordinary connection: Basecamp abandons a download af
 and always fetches every architecture, and `medusa_core` is too large to arrive in time. Worse,
 when that deadline fires the install is reported as having *succeeded*.
 
-Download the file for your machine instead, then use **Install LGX Package** in the Package
-Manager. Installing from disk does no downloading, so no deadline applies.
+Download the file for your machine instead, then install it from disk:
+**Settings → Modules → Install LGX Package**. That path does no downloading, so no download
+deadline applies — a 90 MB package installs in about two seconds.
 
 | Machine | Files, in this order |
 |---|---|
