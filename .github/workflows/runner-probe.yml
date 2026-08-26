@@ -1,9 +1,0 @@
-name: runner-probe
-on: { workflow_dispatch: {} }
-jobs:
-  probe:
-    runs-on: ubuntu-22.04
-    steps:
-      - run: |
-          . /etc/os-release; echo "image: $PRETTY_NAME"
-          ldd --version | head -1
