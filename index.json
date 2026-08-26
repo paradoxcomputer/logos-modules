@@ -1,17 +1,17 @@
 {
   "schemaVersion": 2,
   "repositoryName": "paradox-modules",
-  "generatedAt": "2026-08-26T02:57:12Z",
+  "generatedAt": "2026-08-26T03:10:11Z",
   "packages": [
     {
       "name": "medusa_core",
       "versions": [
         {
-          "releasedAt": "2026-08-26T02:57:12Z",
-          "publisherRef": "medusa_core-v0.4.2",
-          "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_core-0.4.2.lgx",
+          "releasedAt": "2026-08-26T03:10:11Z",
+          "publisherRef": "medusa_core-v0.4.3",
+          "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_core-0.4.3.lgx",
           "size": 70393936,
-          "sha256": "8b0a428dd38153b86d059438025479b0785616d25052aa475a02ff88951677a0",
+          "sha256": "2cbd76099f9b4562b453c7d21c218d0417ddafd9f2facf713afb19fa05e64a71",
           "rootHash": "a50204047e2982cda8038ef600ab25c23f7c51b7af70b9ff6b70c51874552742",
           "manifest": {
             "author": "",
@@ -37,7 +37,7 @@
             "manifestVersion": "0.3.0",
             "name": "medusa_core",
             "type": "core",
-            "version": "0.4.2"
+            "version": "0.4.3"
           }
         }
       ]
@@ -46,7 +46,39 @@
       "name": "medusa_ui",
       "versions": [
         {
-          "releasedAt": "2026-08-26T02:57:12Z",
+          "releasedAt": "2026-08-26T03:10:11Z",
+          "publisherRef": "medusa_ui-v0.4.3",
+          "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_ui-0.4.3.lgx",
+          "size": 9756876,
+          "sha256": "b168e0293421ecc113d7926c9a48358e995db7e6f18cf8627b65da7dfecae9f3",
+          "rootHash": "43c05eccde644a2947f1637521330d2365805c4d47ebdaf5947b8b8a2ba50355",
+          "manifest": {
+            "author": "",
+            "category": "blockchain",
+            "dependencies": [
+              "medusa_core"
+            ],
+            "description": "Native token wallet UI: accounts, faucet, keycard-gated transfers",
+            "display_name": "Medusa",
+            "hashes": {
+              "root": "43c05eccde644a2947f1637521330d2365805c4d47ebdaf5947b8b8a2ba50355",
+              "variants": "80939ec87a1de0e4c073566c6f839f5d220eeb9f4385d824ed61d02d5f3e7850",
+              "variants/darwin-arm64": "20853f4bfb66d9d35552e7673657fdb1c07463da006e9cf0af2b71f727c3f5cd",
+              "variants/darwin-arm64-dev": "20853f4bfb66d9d35552e7673657fdb1c07463da006e9cf0af2b71f727c3f5cd",
+              "variants/linux-amd64": "20853f4bfb66d9d35552e7673657fdb1c07463da006e9cf0af2b71f727c3f5cd",
+              "variants/linux-amd64-dev": "20853f4bfb66d9d35552e7673657fdb1c07463da006e9cf0af2b71f727c3f5cd"
+            },
+            "icon": "medusa-icon.png",
+            "main": {},
+            "manifestVersion": "0.2.0",
+            "name": "medusa_ui",
+            "type": "ui_qml",
+            "version": "0.4.3",
+            "view": "qml/Main.qml"
+          }
+        },
+        {
+          "releasedAt": "2026-08-26T03:10:11Z",
           "publisherRef": "medusa_ui-v0.4.1",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_ui-0.4.1.lgx",
           "size": 9755683,
@@ -78,7 +110,7 @@
           }
         },
         {
-          "releasedAt": "2026-08-26T02:57:12Z",
+          "releasedAt": "2026-08-26T03:10:11Z",
           "publisherRef": "medusa_ui-v0.4.0",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_ui-0.4.0.lgx",
           "size": 9736220,
@@ -114,7 +146,7 @@
       "name": "tip_jar",
       "versions": [
         {
-          "releasedAt": "2026-08-26T02:57:12Z",
+          "releasedAt": "2026-08-26T03:10:11Z",
           "publisherRef": "tip_jar-v0.2.1",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/tip_jar-0.2.1.lgx",
           "size": 183761,
@@ -150,7 +182,7 @@
       "name": "zonescan_lite",
       "versions": [
         {
-          "releasedAt": "2026-08-26T02:57:12Z",
+          "releasedAt": "2026-08-26T03:10:11Z",
           "publisherRef": "zonescan_lite-v0.3.1",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/zonescan_lite-0.3.1.lgx",
           "size": 15257069,
