@@ -1,13 +1,13 @@
 {
   "schemaVersion": 2,
   "repositoryName": "paradox-modules",
-  "generatedAt": "2026-08-31T15:39:29Z",
+  "generatedAt": "2026-09-14T14:00:07Z",
   "packages": [
     {
       "name": "medusa_core",
       "versions": [
         {
-          "releasedAt": "2026-08-31T15:39:29Z",
+          "releasedAt": "2026-09-14T14:00:07Z",
           "publisherRef": "medusa_core-v0.4.4",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_core-0.4.4.lgx",
           "size": 70769782,
@@ -45,7 +45,7 @@
       "name": "medusa_ui",
       "versions": [
         {
-          "releasedAt": "2026-08-31T15:39:29Z",
+          "releasedAt": "2026-09-14T14:00:07Z",
           "publisherRef": "medusa_ui-v0.4.4",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_ui-0.4.4.lgx",
           "size": 9742538,
@@ -81,7 +81,7 @@
       "name": "tip_jar",
       "versions": [
         {
-          "releasedAt": "2026-08-31T15:39:29Z",
+          "releasedAt": "2026-09-14T14:00:07Z",
           "publisherRef": "tip_jar-v0.2.1",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/tip_jar-0.2.1.lgx",
           "size": 183761,
@@ -117,12 +117,12 @@
       "name": "zonescan_lite",
       "versions": [
         {
-          "releasedAt": "2026-08-31T15:39:29Z",
-          "publisherRef": "zonescan_lite-v0.3.2",
-          "url": "https://paradoxcomputer.github.io/logos-modules/lgx/zonescan_lite-0.3.2.lgx",
-          "size": 15349120,
-          "sha256": "d343c5334282c1b36ab30837f7ad05645624024e43bfe1bfbf0449651ad9ac15",
-          "rootHash": "2f798edbcbdd75e9a313f38f1ecbb26d47f3300ef3d0a474491e4d9b2ce7f720",
+          "releasedAt": "2026-09-14T14:00:07Z",
+          "publisherRef": "zonescan_lite-v0.3.3",
+          "url": "https://paradoxcomputer.github.io/logos-modules/lgx/zonescan_lite-0.3.3.lgx",
+          "size": 15374217,
+          "sha256": "053309ed0f48595ebe81d1f92d98ad5a7317f343c159da3d1ec5420834127d6c",
+          "rootHash": "728bd2eeba8ace4a247f1d4f1c3c4ffbe4a571e072d93bf5c4e6aa7e576f193f",
           "manifest": {
             "author": "paradox.computer",
             "category": "explorer",
@@ -130,12 +130,12 @@
             "description": "ZoneScan Lite: a Logos Execution Zone block explorer",
             "display_name": "ZoneScan Lite",
             "hashes": {
-              "root": "2f798edbcbdd75e9a313f38f1ecbb26d47f3300ef3d0a474491e4d9b2ce7f720",
-              "variants": "56b8938a984b0a71438dae3507d8089f910a74112b341555af93b0233c3e49cf",
-              "variants/darwin-arm64": "31fcac44dea8dbe3985232e38c20f8882404afbdfc05264466e3c0b567e43d91",
-              "variants/darwin-arm64-dev": "31fcac44dea8dbe3985232e38c20f8882404afbdfc05264466e3c0b567e43d91",
-              "variants/linux-amd64": "e923afd382c1626e7ae22a94943ab90555569db7520c17b3f0609aaa3a602ba2",
-              "variants/linux-amd64-dev": "e923afd382c1626e7ae22a94943ab90555569db7520c17b3f0609aaa3a602ba2"
+              "root": "728bd2eeba8ace4a247f1d4f1c3c4ffbe4a571e072d93bf5c4e6aa7e576f193f",
+              "variants": "e628a7310614723d63ed16357c6a34fbb389ab593dd320afbfdb953f2bd0ce39",
+              "variants/darwin-arm64": "c0c88117259330ea0609070f9cb3e6cdc6e06c7fe789275f02989242567a78e4",
+              "variants/darwin-arm64-dev": "c0c88117259330ea0609070f9cb3e6cdc6e06c7fe789275f02989242567a78e4",
+              "variants/linux-amd64": "2a1ed72b52b5573e37c6b77435984b026954609681d2826dafaf26c95309871e",
+              "variants/linux-amd64-dev": "2a1ed72b52b5573e37c6b77435984b026954609681d2826dafaf26c95309871e"
             },
             "icon": "icon.png",
             "main": {
@@ -147,7 +147,7 @@
             "manifestVersion": "0.3.0",
             "name": "zonescan_lite",
             "type": "ui_qml",
-            "version": "0.3.2",
+            "version": "0.3.3",
             "view": "qml/Main.qml"
           }
         }
