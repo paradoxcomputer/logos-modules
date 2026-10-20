@@ -1,13 +1,13 @@
 {
   "schemaVersion": 2,
   "repositoryName": "paradox-modules",
-  "generatedAt": "2026-09-14T21:20:53Z",
+  "generatedAt": "2026-10-20T09:41:10Z",
   "packages": [
     {
       "name": "medusa_core",
       "versions": [
         {
-          "releasedAt": "2026-09-14T21:20:53Z",
+          "releasedAt": "2026-10-20T09:41:10Z",
           "publisherRef": "medusa_core-v0.4.4",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_core-0.4.4.lgx",
           "size": 70769782,
@@ -45,7 +45,7 @@
       "name": "medusa_ui",
       "versions": [
         {
-          "releasedAt": "2026-09-14T21:20:53Z",
+          "releasedAt": "2026-10-20T09:41:10Z",
           "publisherRef": "medusa_ui-v0.4.4",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/medusa_ui-0.4.4.lgx",
           "size": 9742538,
@@ -81,7 +81,7 @@
       "name": "tip_jar",
       "versions": [
         {
-          "releasedAt": "2026-09-14T21:20:53Z",
+          "releasedAt": "2026-10-20T09:41:10Z",
           "publisherRef": "tip_jar-v0.2.1",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/tip_jar-0.2.1.lgx",
           "size": 183761,
@@ -117,7 +117,42 @@
       "name": "zonescan_lite",
       "versions": [
         {
-          "releasedAt": "2026-09-14T21:20:53Z",
+          "releasedAt": "2026-10-20T09:41:10Z",
+          "publisherRef": "zonescan_lite-v0.4.0",
+          "url": "https://paradoxcomputer.github.io/logos-modules/lgx/zonescan_lite-0.4.0.lgx",
+          "size": 15409607,
+          "sha256": "6f38b23be855f8ab98a9dab8672c5f6c34951319203bcd8417316bed682a18c3",
+          "rootHash": "827236065fe7447d9a6d8fc7c802069c1eb11768801bd414e216a95d11460985",
+          "manifest": {
+            "author": "paradox.computer",
+            "category": "explorer",
+            "dependencies": [],
+            "description": "ZoneScan Lite: a Logos Execution Zone block explorer",
+            "display_name": "ZoneScan Lite",
+            "hashes": {
+              "root": "827236065fe7447d9a6d8fc7c802069c1eb11768801bd414e216a95d11460985",
+              "variants": "41068042dd99ccaf599d281e77cf21261e8f5eaaa60d54f081c487454784262c",
+              "variants/darwin-arm64": "37db90d8b82abb9aa9adac3b37753588d1d17657fb28f34e6d83843465419f25",
+              "variants/darwin-arm64-dev": "37db90d8b82abb9aa9adac3b37753588d1d17657fb28f34e6d83843465419f25",
+              "variants/linux-amd64": "d862053e9a26e48ef53cfc4e84d547aded8cdaecf166ff204c31f5dfb91f311f",
+              "variants/linux-amd64-dev": "d862053e9a26e48ef53cfc4e84d547aded8cdaecf166ff204c31f5dfb91f311f"
+            },
+            "icon": "icon.png",
+            "main": {
+              "darwin-arm64": "zonescan_lite_plugin.dylib",
+              "darwin-arm64-dev": "zonescan_lite_plugin.dylib",
+              "linux-amd64": "zonescan_lite_plugin.so",
+              "linux-amd64-dev": "zonescan_lite_plugin.so"
+            },
+            "manifestVersion": "0.3.0",
+            "name": "zonescan_lite",
+            "type": "ui_qml",
+            "version": "0.4.0",
+            "view": "qml/Main.qml"
+          }
+        },
+        {
+          "releasedAt": "2026-10-20T09:41:10Z",
           "publisherRef": "zonescan_lite-v0.3.4",
           "url": "https://paradoxcomputer.github.io/logos-modules/lgx/zonescan_lite-0.3.4.lgx",
           "size": 15388259,
